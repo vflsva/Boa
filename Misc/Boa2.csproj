@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0D3CD5E-5198-4220-84F7-E9B7255350B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Boa2</RootNamespace>
+    <AssemblyName>Boa2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accord, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.3.8.0\lib\net45\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Genetic, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Genetic.3.8.0\lib\net45\Accord.Genetic.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.MachineLearning.3.8.0\lib\net45\Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net45\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Math.3.8.0\lib\net45\Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Neuro, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Neuro.3.8.0\lib\net45\Accord.Neuro.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Accord.Statistics.3.8.0\lib\net45\Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="LibNoise, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LibNoise.0.2\lib\NET45\LibNoise.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="RhinoCommon">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Rhino 6\System\rhinocommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Grasshopper">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Rhino 6\Plug-ins\Grasshopper\Grasshopper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GH_IO">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Rhino 6\Plug-ins\Grasshopper\GH_IO.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\AlgorithmComponents\ReverseAlgorithmComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\SortAlgorithmComponent.cs" />
+    <Compile Include="Components\MultiplyAlgorithmsComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\RandomAlgorithmComponent.cs" />
+    <Compile Include="Trash\ActivationFunction.cs" />
+    <Compile Include="Components\AddAlgorithmsComponent.cs" />
+    <Compile Include="Attributes\Boa_AlgorithmComponentAttributes.cs" />
+    <Compile Include="Attributes\Boa_AlgorithmSolverAttributes.cs" />
+    <Compile Include="Attributes\NeuralNetTrainerComponentAttributes.cs" />
+    <Compile Include="Attributes\NeuralNetTrainerParamAttributes.cs" />
+    <Compile Include="BackpropagationTrainer.cs" />
+    <Compile Include="Boa2Info.cs" />
+    <Compile Include="Boa_TrainerComponent.cs" />
+    <Compile Include="Trash\BusComponent.cs" />
+    <Compile Include="Components\AlgorithmAdditiveFeedbackSolverComponent.cs" />
+    <Compile Include="Components\AlgorithmBasicSolverComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\AdditionAlgorithmComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\AlgorithmSumComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\AngleToCoordsAlgorithm.cs" />
+    <Compile Include="Components\AlgorithmComponents\ClippingAlgorithmComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\CustomAlgorithmComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\CyclesAlgorithmComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\DivisionAlgorithmComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\MultiplicationAlgorithmComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\PerlinAlgorithmComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\RemappingAlgorithmComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\SimplexAlgorithmComponent.cs" />
+    <Compile Include="Components\AlgorithmFeedbackSolverComponent.cs" />
+    <Compile Include="Components\AlgorithmStatisticsComponent.cs" />
+    <Compile Include="Components\BackpropagationTrainerComponent.cs" />
+    <Compile Include="Components\Boa_AlgorithmComponent.cs" />
+    <Compile Include="Components\Boa_AlgorithmNoiseComponent.cs" />
+    <Compile Include="Components\Boa_AlgorithmSolverComponent.cs" />
+    <Compile Include="Components\DataInComponent.cs" />
+    <Compile Include="Components\DataOutComponent.cs" />
+    <Compile Include="Components\EvolutionaryTrainerComponent.cs" />
+    <Compile Include="Components\NeuralNetAlgorithmComponent.cs" />
+    <Compile Include="Components\NeuralNetAlgorithmVariableParamComponent.cs" />
+    <Compile Include="Components\Boa_ParallelAlgorithmComponent.cs" />
+    <Compile Include="Components\AlgorithmComponents\RearrangeAlgorithmComponent.cs" />
+    <Compile Include="EvolutionaryTrainer.cs" />
+    <Compile Include="ExplodeAlgorithmComponent.cs" />
+    <Compile Include="GeneticAlgorithmComponent.cs" />
+    <Compile Include="Trash\IBoa_AlgorithmSolution.cs" />
+    <Compile Include="ISupervisedTrainer.cs" />
+    <Compile Include="LibNoiseWrapper.cs" />
+    <Compile Include="NeuralNetwork.cs" />
+    <Compile Include="Trash\ParallelAlgorithmsComponent.cs" />
+    <Compile Include="Parameters\Boa_AlgorithmParameter.cs" />
+    <Compile Include="Trash\Perlin.cs" />
+    <Compile Include="PerlinAlgorithm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SimplexAlgorithm.cs" />
+    <Compile Include="TeleporterCache.cs" />
+    <Compile Include="TrainerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Types\Boa_Algorithm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlgorithmSolverIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\algorithmAdditiveFeedbackSolverIcon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\algorithmFeedbackSolverIcon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perlinIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worleyIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addAlgorithmsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\additionAlgorithmIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\algorithmAdditiveFeedbackSolverIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\algorithmFeedbackSolverIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\algorithmIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\algorithmSolverIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\algorithmSumIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angleToCoordsAlgorithmIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backpropagationTrainerIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chainAlgorithmsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clippingAlgorithmIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\combineAlgorithmsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\combineAlgorithmsIconv1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customAlgorithmIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\divisionAlgorithmIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emptyAlgorithmIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiplicationAlgorithmIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiplyAlgorithmsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\neuralNetworkIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perlinNoiseIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rearrangeAlgorithmIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reverseAlgorithmIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\simplexNoiseIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\simplexNoiseIcon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sortAlgorithmIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subtractionAlgorithmIcon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>Copy "$(TargetPath)" "$(TargetDir)$(ProjectName).gha"
+Erase "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <FallbackCulture>en-US</FallbackCulture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartProgram>C:\Program Files\Rhino 6\System\Rhino.exe</StartProgram>
+    <StartArguments>
+    </StartArguments>
+    <StartAction>Program</StartAction>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <Import Project="..\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.0\build\Accord.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Accord.3.8.0\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Accord.3.8.0\build\Accord.targets'))" />
+  </Target>
+</Project>
